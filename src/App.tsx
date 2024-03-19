@@ -38,7 +38,10 @@ function App() {
         setWords([...words, guess.toUpperCase()]);
       }).catch((error) => {
         if(error.name !== "AbortError") {
-          setClues(clues.slice(0, clues.length - 1));
+          abortController.abort();
+          if(clues.length > 0) {
+            setClues(clues.slice(0, clues.length - 1));
+          }
           setLoading(false);
           setError(error.message);
         }
@@ -76,7 +79,7 @@ function App() {
       <Typography level="h1">🤖 Wordle Bot</Typography>
       { !success && !failed &&
         <>
-          <Guess currentWord={words[words.length - 1]} />
+          <Guess isLoading={loading} currentWord={words[words.length - 1]} />
           <ClueInput setClues={setClues} clues={clues} isLoading={loading} currentWord={words[words.length - 1]} />
           {error && (
             <Alert color="danger" sx={{ display: "flex", flexDirection: "column", width: 500 }}>

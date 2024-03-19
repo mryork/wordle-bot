@@ -34,6 +34,7 @@ export default function InputBox({
         alignItems: "center",
         cursor,
       }}
+      data-testid={`input-button-${index}`}
       onClick={() => {
         if (immutable || isLoading) return;
         setInputState(
