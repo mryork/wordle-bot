@@ -33,7 +33,7 @@ describe("Utils", () => {
     const getApiResponse = (await import("../utils/get-api-response")).default;
     try {
       await getApiResponse([], [], new AbortController());
-    } catch (error) {
+    } catch (error: any) {
       expect(error.message).toEqual("Sample error");
     }
   });

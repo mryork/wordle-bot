@@ -1,4 +1,3 @@
-import Stack from '@mui/joy/Stack';
 import { Typography } from "@mui/joy";
 
 export default function PreviousGuesses({ guesses }: { guesses: string[] }) {
