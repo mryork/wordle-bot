@@ -1,9 +1,8 @@
 import { useState, useEffect } from "react";
 import Stack from '@mui/joy/Stack';
 import Button from '@mui/joy/Button';
-import { Typography } from "@mui/joy";
-import LinearProgress from '@mui/joy/LinearProgress';
 import InputBox from "./input-box";
+import transformInputState from "../utils/transform-input-state";
 
 export default function ClueInput({
   setClues,
@@ -34,21 +33,6 @@ export default function ClueInput({
     setImmutableClues(greenClues);
     setInputState(defaultState);
   }, [clues]);
-
-  function transformInputState(inputState: number[]): string {
-    return inputState
-      .map((color) => {
-        if (color === 0) {
-          return "x";
-        } else if (color === 1) {
-          return "g";
-        } else {
-          return "y";
-        }
-      })
-      .join("");
-  }
-
 
   return (
     <Stack direction="column" spacing={2} justifyContent="center">

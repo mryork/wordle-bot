@@ -4,7 +4,7 @@ export default function Guess({ currentWord }: { currentWord: string }) {
   return (
     <Typography>
       {!currentWord && "Loading word to guess..."}
-      {currentWord && <><b>Word to guess:</b> {currentWord}</>}
+      {currentWord && <><b>Try this word:</b> {currentWord}</>}
     </Typography>
   );
 }
