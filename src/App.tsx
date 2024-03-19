@@ -19,12 +19,16 @@ function App() {
         setWords([...words, guess]);
       }).catch((error) => {
         if(error.name !== "AbortError") {
+          setClues(clues.slice(0, clues.length - 1));
           setLoading(false);
           setError(error.message);
         }
       })
 
-      if(!abortController.signal.aborted) setLoading(true);
+      if(!abortController.signal.aborted) {
+        setLoading(true);
+        setError('');
+      }
     }
 
     return () => abortController.abort();
