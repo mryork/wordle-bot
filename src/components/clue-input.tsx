@@ -35,7 +35,7 @@ export default function ClueInput({
   }, [clues]);
 
   return (
-    <Stack direction="column" spacing={2} justifyContent="center">
+    <Stack direction="column" spacing={2} justifyContent="center" padding={2}>
       <Stack direction="row" spacing={3}>
         {inputState.map((color, index) => (
           <InputBox color={color} index={index} letter={currentWord?.substring(index, index + 1)} key={index} inputState={inputState} setInputState={setInputState} isLoading={isLoading} immutable={immutableClues.includes(index)} />

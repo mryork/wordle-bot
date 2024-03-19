@@ -25,8 +25,10 @@ export default function InputBox({
     <button
       style={{
         backgroundColor: immutable ? "#278a32" : colors[color],
-        width: "60px",
-        height: "60px",
+        maxWidth: "60px",
+        maxHeight: "60px",
+        width: "15vw",
+        height: "15vw",
         border: "1px solid #c4c4c4",
         borderRadius: "5px",
         display: "flex",
